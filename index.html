@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Салон красоты — Твоя красота, наша забота</title>
+  <meta name="description" content="Премиальный салон красоты в центре города: косметология, парикмахерские услуги, маникюр и педикюр, массаж, брови и ресницы. Онлайн-запись к мастеру за минуту.">
+  <meta name="theme-color" content="#1a100a">
+  <meta property="og:title" content="Салон красоты — ваша красота в надёжных руках">
+  <meta property="og:description" content="Премиум-класс в каждой детали. Онлайн-запись к лучшим мастерам города.">
+  <meta property="og:image" content="img/hero.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/playfair-display-400-700-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-400-700-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-500-italic-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="img/hero.webp" media="(min-width: 901px)">
+  <link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width: 900px)">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+</head>
+<body>
+
+<!-- SVG-спрайт с иконками -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbe3c4"/>
+      <stop offset=".55" stop-color="#dcae7c"/>
+      <stop offset="1" stop-color="#b4804f"/>
+    </linearGradient>
+  </defs>
+  <symbol id="i-lotus" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 5.5c-6.2 7-8.8 14-8.8 20.6 0 6.7 3.4 11.9 8.8 15.9 5.4-4 8.8-9.2 8.8-15.9 0-6.6-2.6-13.6-8.8-20.6z"/>
+    <path d="M23.6 22.4C18 19 12 18.2 6.8 19.2c1.3 8.6 5.7 15.2 12.8 19 3.8 2 8 3.3 12.4 3.6"/>
+    <path d="M40.4 22.4C46 19 52 18.2 57.2 19.2c-1.3 8.6-5.7 15.2-12.8 19-3.8 2-8 3.3-12.4 3.6"/>
+    <path d="M17.6 20.8c-.3-4.8.7-9.3 2.8-12.8 3.4 2.3 6.2 5.3 8 8.9"/>
+    <path d="M46.4 20.8c.3-4.8-.7-9.3-2.8-12.8-3.4 2.3-6.2 5.3-8 8.9"/>
+    <path d="M3.5 42.5c8.6 3.2 19 3.6 28.5-.5 9.5 4.1 19.9 3.7 28.5.5"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="5" width="17" height="15.5" rx="2.6"/>
+    <path d="M3.5 9.6h17M8 3v4M16 3v4M7.6 13.2h1.6M11.2 13.2h1.6M14.8 13.2h1.6M7.6 16.6h1.6M11.2 16.6h1.6"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12h15.5M13.5 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-arrow-long" viewBox="0 0 120 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 6h116M111.5 1.5 117 6l-5.5 4.5"/>
+  </symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 4h10l4.5 5.5L12 20.5 2.5 9.5z"/>
+    <path d="M2.5 9.5h19M9.6 4 8.1 9.5 12 20.5l3.9-11L14.4 4"/>
+  </symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.8 19.5 5.6v5.6c0 4.7-3.2 8.6-7.5 9.9-4.3-1.3-7.5-5.2-7.5-9.9V5.6z"/>
+    <path d="m8.6 11.9 2.4 2.4 4.6-4.8"/>
+  </symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.2S3.5 15.3 3.5 9.1c0-2.8 2.1-4.9 4.7-4.9 1.6 0 3 .8 3.8 2.1.8-1.3 2.2-2.1 3.8-2.1 2.6 0 4.7 2.1 4.7 4.9 0 6.2-8.5 11.1-8.5 11.1z"/>
+  </symbol>
+  <symbol id="i-heart-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.2S3.5 15.3 3.5 9.1c0-2.8 2.1-4.9 4.7-4.9 1.6 0 3 .8 3.8 2.1.8-1.3 2.2-2.1 3.8-2.1 2.6 0 4.7 2.1 4.7 4.9 0 6.2-8.5 11.1-8.5 11.1z"/>
+    <path d="M4.2 12h3.9l1.5-2.5 2.3 4.8 1.6-2.3h6.3"/>
+  </symbol>
+  <symbol id="i-shield-fill" viewBox="0 0 24 24">
+    <path fill="url(#g-gold)" d="M12 2.6 19.8 5.5v5.8c0 4.8-3.3 8.9-7.8 10.1-4.5-1.2-7.8-5.3-7.8-10.1V5.5z"/>
+    <path fill="none" stroke="#5a3a22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.8 11.9 2.2 2.2 4.3-4.5"/>
+  </symbol>
+  <symbol id="i-heart-fill" viewBox="0 0 24 24">
+    <path fill="url(#g-gold)" d="M12 20.6S3.2 15.5 3.2 9c0-2.9 2.2-5.1 4.9-5.1 1.7 0 3.1.8 3.9 2.2.8-1.4 2.2-2.2 3.9-2.2 2.7 0 4.9 2.2 4.9 5.1 0 6.5-8.8 11.6-8.8 11.6z"/>
+  </symbol>
+  <symbol id="i-heart-doodle" viewBox="0 0 40 44" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.5 30.5C14 26 8.5 21.6 8.5 15.6c0-3.6 2.6-6.1 5.7-6.1 2.6 0 4.8 1.6 6.1 4 1.3-2.4 3.5-4 6.1-4 3.1 0 5.7 2.5 5.7 6.1 0 6-5.5 10.4-11.6 14.9z"/>
+    <path d="M20.5 30.5c-.8 3.6-3.4 7.6-8.6 10.2M13.6 38.4c-2.2-.3-3.6.4-4.6 1.8"/>
+  </symbol>
+  <symbol id="i-flower-doodle" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 15.5c-2.6-3.4-2.6-7.6 0-10.5 2.6 2.9 2.6 7.1 0 10.5z"/>
+    <path d="M24 15.5c-4-1.4-6.6-4.7-6.6-8.6 3.8.1 6.6 3.4 6.6 8.6z"/>
+    <path d="M24 15.5c4-1.4 6.6-4.7 6.6-8.6-3.8.1-6.6 3.4-6.6 8.6z"/>
+    <path d="M24 15.5c-4.4.6-8.3-1.1-10.3-4.6 3.6-1.5 7.6.2 10.3 4.6z"/>
+    <path d="M24 15.5c4.4.6 8.3-1.1 10.3-4.6-3.6-1.5-7.6.2-10.3 4.6z"/>
+    <path d="M24 15.5c.4 8.4-1.6 17.6-7.5 27"/>
+    <path d="M22.8 27.5c-4.4-2.6-9.2-2.3-12.2.4 3.4 2.6 8.2 2.6 12.2-.4z"/>
+    <path d="M21 34.6c3.8-3.4 8.6-4.2 12-2.2-2.8 3.2-7.6 4.2-12 2.2z"/>
+  </symbol>
+  <symbol id="i-face" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 4.8c-5 0-8.4 3.9-8.4 9.1 0 6.2 3.8 11.4 8.4 11.4s8.4-5.2 8.4-11.4c0-5.2-3.4-9.1-8.4-9.1z"/>
+    <path d="M7.7 13.2c3.7.2 6.9-1.7 8.6-5 1.6 3 4.2 4.7 7.9 5"/>
+    <path d="M11.6 16c.8.7 2 .7 2.8 0M17.6 16c.8.7 2 .7 2.8 0M14.4 20.6c1.1.7 2.1.7 3.2 0"/>
+    <path d="M12 24c-.4 1.9-2 3.1-4.8 3.8M20 24c.4 1.9 2 3.1 4.8 3.8"/>
+  </symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="6" cy="6" r="2.8"/>
+    <circle cx="18" cy="6" r="2.8"/>
+    <path d="M8 8l12 12.5M16 8 4 20.5M10.6 12.6h2.8"/>
+  </symbol>
+  <symbol id="i-polish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="10.5" width="8.6" height="10.5" rx="2.2"/>
+    <path d="M6.2 10.5V7h4.2v3.5M7.2 7V3h2.2v4"/>
+    <rect x="14.6" y="13.4" width="5.2" height="7.6" rx="1.6"/>
+    <path d="M15.8 13.4v-2.6h2.8v2.6M17.2 10.8V7.6"/>
+  </symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.5 14S6.2 8.6 12 8.6 21.5 14 21.5 14 17.8 19.4 12 19.4 2.5 14 2.5 14z"/>
+    <circle cx="12" cy="14" r="3"/>
+    <path d="M12 8.6V5.8M7.6 9.6 6.3 7.4M16.4 9.6l1.3-2.2M4.6 11.4 3 9.8M19.4 11.4l1.6-1.6"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+    <path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/>
+  </symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m14.5 6-6 6 6 6"/>
+  </symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m9.5 6 6 6-6 6"/>
+  </symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 6.5c-3.4 1.1-5.5 3.8-5.5 7.3V17A1.5 1.5 0 0 0 6 18.5h3a1.5 1.5 0 0 0 1.5-1.5v-3A1.5 1.5 0 0 0 9 12.5H6.6c.3-1.9 1.6-3.4 3.9-4.3z"/>
+    <path d="M19.5 6.5c-3.4 1.1-5.5 3.8-5.5 7.3V17a1.5 1.5 0 0 0 1.5 1.5h3A1.5 1.5 0 0 0 20 17v-3a1.5 1.5 0 0 0-1.5-1.5h-2.4c.3-1.9 1.6-3.4 3.9-4.3z"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.2s-6.6-5.7-6.6-11.2a6.6 6.6 0 0 1 13.2 0c0 5.5-6.6 11.2-6.6 11.2z"/>
+    <circle cx="12" cy="10" r="2.4"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.6"/>
+    <path d="M12 7.4V12l3 2"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.2 16.2v2.7a1.8 1.8 0 0 1-2 1.8 17.8 17.8 0 0 1-7.8-2.8 17.5 17.5 0 0 1-5.4-5.4A17.8 17.8 0 0 1 2.2 4.7a1.8 1.8 0 0 1 1.8-2h2.7a1.8 1.8 0 0 1 1.8 1.6c.1.9.3 1.7.6 2.5a1.8 1.8 0 0 1-.4 1.9L7.5 9.9a14.4 14.4 0 0 0 5.4 5.4l1.2-1.2a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.5 2.5.6a1.8 1.8 0 0 1 1.7 1.9z"/>
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/>
+    <circle cx="12" cy="12" r="4.1"/>
+    <circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.4 20.6l1.3-4.3a8.7 8.7 0 1 1 3.4 3.1z"/>
+    <path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.4 0 .6.4.7.9 1.3 1.5 1.8.5.5 1.1.8 1.7 1.1.2.1.4 0 .5-.1l.6-.8c.2-.2.4-.3.6-.2l1.6.7c.3.1.4.3.4.5 0 .5-.2 1-.6 1.4-.5.5-1.4.7-2.2.5-1.3-.4-2.5-1.1-3.6-2-1-1-1.9-2.1-2.4-3.4-.3-.8-.2-1.6.4-2.5z"/>
+  </symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4v10.5M7.2 10l4.8 4.8 4.8-4.8M5 19.5h14"/>
+  </symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 3.5 2.8 10.6c-.6.3-.6 1.1 0 1.3l4.6 1.7 1.8 5.6c.2.6.9.7 1.3.3l2.6-2.4 4.6 3.4c.5.4 1.2.1 1.3-.5L22 4.6c.1-.7-.4-1.3-1-1.1z"/>
+    <path d="m7.4 13.6 9.6-6.2-6.6 7.4-.4 4.1"/>
+  </symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <path d="M12 5.5v13M5.5 12h13"/>
+  </symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <path d="M5.5 12h13"/>
+  </symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24" stroke-linejoin="round">
+    <path d="M12 3.2 15.2 12H8.8z" fill="currentColor"/>
+    <path d="M12 20.8 8.8 12h6.4z" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  </symbol>
+  <symbol id="i-pin-fill" viewBox="0 0 32 40">
+    <path fill="#1d130d" d="M16 39.2S3 27.4 3 16.4a13 13 0 0 1 26 0c0 11-13 22.8-13 22.8z"/>
+    <circle cx="16" cy="16.2" r="5.2" fill="#f4e6d4"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <path d="M6 6l12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 12.5 4.5 4.5L19 7.5"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<div class="page">
+
+  <!-- ============ ШАПКА ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Салон красоты — на главную">
+        <svg class="logo__icon" aria-hidden="true"><use href="#i-lotus"/></svg>
+        <span class="logo__text">
+          <span class="logo__name">Салон красоты</span>
+          <span class="logo__tagline">Твоя красота — наша забота</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#services">Услуги</a></li>
+          <li><a class="nav__link" href="#about">О нас</a></li>
+          <li><a class="nav__link" href="#masters">Мастера</a></li>
+          <li><a class="nav__link" href="#reviews">Отзывы</a></li>
+          <li><a class="nav__link" href="#gallery" data-open="gallery">Галерея</a></li>
+          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+        <div class="nav__extra">
+          <button class="btn btn--gold" type="button" data-open="booking">
+            <span>Онлайн-запись</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+          </button>
+          <a class="nav__phone" href="tel:+79991234567">+7 (999) 123-45-67</a>
+          <p class="nav__hours">Ежедневно с 09:00 до 21:00</p>
+        </div>
+      </nav>
+
+      <button class="btn btn--gold btn--sm header__cta" type="button" data-open="booking">
+        <span>Онлайн-запись</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+      </button>
+
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span>
+      </button>
+      <div class="nav-overlay" data-nav-close></div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ПЕРВЫЙ ЭКРАН ============ -->
+    <section class="hero" id="top">
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 900px)" srcset="img/hero-mobile.webp" width="768" height="1376">
+          <img class="hero__img" src="img/hero.webp" width="1920" height="1072" alt="" fetchpriority="high" decoding="async">
+        </picture>
+        <span class="hero__glow"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow" data-intro style="--d:.15s">Салон красоты</p>
+          <h1 class="hero__title">
+            <span class="hero__title-line" data-intro style="--d:.3s">Ваша красота</span>
+            <span class="hero__title-accent" data-intro style="--d:.45s">в надёжных руках<svg class="hero__heart" aria-hidden="true"><use href="#i-heart-doodle"/></svg></span>
+          </h1>
+          <p class="hero__subtitle" data-intro style="--d:.6s">Премиум-класс в каждой детали</p>
+
+          <ul class="features" id="about" data-intro style="--d:.75s" aria-label="Наши принципы">
+            <li class="feature">
+              <svg class="feature__mark" aria-hidden="true"><use href="#i-heart-pulse"/></svg>
+              <span class="feature__main">
+                <svg class="feature__icon" aria-hidden="true"><use href="#i-gem"/></svg>
+                <span class="feature__text">Премиум<br>качество</span>
+              </span>
+            </li>
+            <li class="feature">
+              <svg class="feature__mark" aria-hidden="true"><use href="#i-shield-fill"/></svg>
+              <span class="feature__main">
+                <svg class="feature__icon" aria-hidden="true"><use href="#i-shield-check"/></svg>
+                <span class="feature__text">Забота<br>о каждом</span>
+              </span>
+            </li>
+            <li class="feature">
+              <svg class="feature__mark" aria-hidden="true"><use href="#i-heart-fill"/></svg>
+              <span class="feature__main">
+                <svg class="feature__icon" aria-hidden="true"><use href="#i-heart"/></svg>
+                <span class="feature__text">Атмосфера<br>гармонии</span>
+              </span>
+            </li>
+          </ul>
+
+          <div class="hero__actions" data-intro style="--d:.9s">
+            <span class="deco-line deco-line--left" aria-hidden="true"></span>
+            <button class="btn btn--gold btn--lg btn--shine" type="button" data-open="booking">
+              <span>Онлайн-запись</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+              <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+            <span class="deco-line deco-line--right" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ УСЛУГИ ============ -->
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="services__panel">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow eyebrow--dark">Наши <svg class="eyebrow__mark" aria-hidden="true"><use href="#i-lotus"/></svg> услуги</p>
+          <h2 class="section-title section-head__title" id="services-title">Наши услуги</h2>
+          <p class="section-head__subtitle">Комплексный уход за вашей красотой и уверенностью</p>
+          <span class="ornament" aria-hidden="true"><svg><use href="#i-lotus"/></svg></span>
+        </header>
+
+        <ul class="services__grid">
+          <li class="service-card" data-reveal style="--d:0s">
+            <div class="service-card__media">
+              <img src="img/services/cosmetology.webp" width="760" height="760" loading="lazy" decoding="async" alt="Косметологическая процедура: уход за кожей лица">
+            </div>
+            <span class="service-card__badge" aria-hidden="true"><svg><use href="#i-face"/></svg></span>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Косметология</h3>
+              <p class="service-card__desc">Чистки, уходы, здоровое сияние</p>
+              <p class="service-card__price">от&nbsp;2&nbsp;500&nbsp;₽</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-service="Косметология"><span class="visually-hidden">Записаться: косметология</span></button>
+          </li>
+          <li class="service-card" data-reveal style="--d:.08s">
+            <div class="service-card__media">
+              <img src="img/services/hair.webp" width="760" height="760" loading="lazy" decoding="async" alt="Вечерняя укладка волос с украшениями">
+            </div>
+            <span class="service-card__badge" aria-hidden="true"><svg><use href="#i-scissors"/></svg></span>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Парикмахерские услуги</h3>
+              <p class="service-card__desc">Стрижки, окрашивание, укладки</p>
+              <p class="service-card__price">от&nbsp;2&nbsp;000&nbsp;₽</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-service="Парикмахерские услуги"><span class="visually-hidden">Записаться: парикмахерские услуги</span></button>
+          </li>
+          <li class="service-card" data-reveal style="--d:.16s">
+            <div class="service-card__media">
+              <img src="img/services/nails.webp" width="760" height="760" loading="lazy" decoding="async" alt="Аккуратный маникюр нежного оттенка">
+            </div>
+            <span class="service-card__badge" aria-hidden="true"><svg><use href="#i-polish"/></svg></span>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Маникюр и педикюр</h3>
+              <p class="service-card__desc">Классический, аппаратный, дизайн</p>
+              <p class="service-card__price">от&nbsp;1&nbsp;500&nbsp;₽</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-service="Маникюр и педикюр"><span class="visually-hidden">Записаться: маникюр и педикюр</span></button>
+          </li>
+          <li class="service-card" data-reveal style="--d:.24s">
+            <div class="service-card__media">
+              <img src="img/services/massage.webp" width="760" height="760" loading="lazy" decoding="async" alt="Расслабляющий массаж спины при свечах">
+            </div>
+            <span class="service-card__badge" aria-hidden="true"><svg><use href="#i-lotus"/></svg></span>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Массаж</h3>
+              <p class="service-card__desc">Релакс, терапевтический, спортивный</p>
+              <p class="service-card__price">от&nbsp;2&nbsp;500&nbsp;₽</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-service="Массаж"><span class="visually-hidden">Записаться: массаж</span></button>
+          </li>
+          <li class="service-card" data-reveal style="--d:.32s">
+            <div class="service-card__media">
+              <img src="img/services/brows.webp" width="760" height="760" loading="lazy" decoding="async" alt="Выразительный взгляд после оформления бровей и ресниц">
+            </div>
+            <span class="service-card__badge" aria-hidden="true"><svg><use href="#i-eye"/></svg></span>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Брови и ресницы</h3>
+              <p class="service-card__desc">Коррекция, окрашивание, ламинирование</p>
+              <p class="service-card__price">от&nbsp;1&nbsp;200&nbsp;₽</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-service="Брови и ресницы"><span class="visually-hidden">Записаться: брови и ресницы</span></button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ МАСТЕРА ============ -->
+    <section class="masters" id="masters" aria-labelledby="masters-title">
+      <div class="masters__panel">
+        <div class="masters__intro" data-reveal>
+          <h2 class="section-title section-title--light" id="masters-title">Наши мастера</h2>
+          <p class="masters__lead">Профессионалы, которые любят свою работу</p>
+        </div>
+
+        <ul class="masters__grid">
+          <li class="master-card" data-reveal style="--d:.05s">
+            <div class="master-card__photo">
+              <img src="img/masters/alina.webp" width="600" height="804" loading="lazy" decoding="async" alt="Алина — косметолог">
+            </div>
+            <div class="master-card__info">
+              <h3 class="master-card__name">Алина</h3>
+              <p class="master-card__role">Косметолог</p>
+              <p class="master-card__exp">Стаж 7 лет</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-master="Алина" data-service="Косметология"><span class="visually-hidden">Записаться к Алине</span></button>
+          </li>
+          <li class="master-card" data-reveal style="--d:.13s">
+            <div class="master-card__photo">
+              <img src="img/masters/ekaterina.webp" width="600" height="804" loading="lazy" decoding="async" alt="Екатерина — парикмахер-стилист">
+            </div>
+            <div class="master-card__info">
+              <h3 class="master-card__name">Екатерина</h3>
+              <p class="master-card__role">Парикмахер-стилист</p>
+              <p class="master-card__exp">Стаж 8 лет</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-master="Екатерина" data-service="Парикмахерские услуги"><span class="visually-hidden">Записаться к Екатерине</span></button>
+          </li>
+          <li class="master-card" data-reveal style="--d:.21s">
+            <div class="master-card__photo">
+              <img src="img/masters/maria.webp" width="600" height="804" loading="lazy" decoding="async" alt="Мария — мастер маникюра">
+            </div>
+            <div class="master-card__info">
+              <h3 class="master-card__name">Мария</h3>
+              <p class="master-card__role">Мастер маникюра</p>
+              <p class="master-card__exp">Стаж 6 лет</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-master="Мария" data-service="Маникюр и педикюр"><span class="visually-hidden">Записаться к Марии</span></button>
+          </li>
+          <li class="master-card" data-reveal style="--d:.29s">
+            <div class="master-card__photo">
+              <img src="img/masters/sofia.webp" width="600" height="804" loading="lazy" decoding="async" alt="София — мастер бровей и ресниц">
+            </div>
+            <div class="master-card__info">
+              <h3 class="master-card__name">София</h3>
+              <p class="master-card__role">Мастер бровей и ресниц</p>
+              <p class="master-card__exp">Стаж 5 лет</p>
+            </div>
+            <button class="card-link" type="button" data-open="booking" data-master="София" data-service="Брови и ресницы"><span class="visually-hidden">Записаться к Софии</span></button>
+          </li>
+        </ul>
+
+        <figure class="masters__quote" data-reveal style="--d:.3s">
+          <svg class="masters__doodle" aria-hidden="true"><use href="#i-flower-doodle"/></svg>
+          <blockquote>
+            <p>Наша команда <br class="br-lg">— это опыт, <br class="br-lg">вдохновение, <br class="br-lg">и&nbsp;любовь <br class="br-lg">к своему делу.</p>
+          </blockquote>
+          <svg class="masters__heart" aria-hidden="true"><use href="#i-heart-doodle"/></svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ ОТЗЫВЫ ============ -->
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="reviews__panel" data-reveal>
+          <header class="reviews__head">
+            <h2 class="section-title section-title--light" id="reviews-title">Отзывы наших клиентов</h2>
+            <p class="reviews__rating">
+              <span>Более 500 довольных клиентов</span>
+              <span class="stars" role="img" aria-label="Средняя оценка 5 из 5">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+              </span>
+            </p>
+          </header>
+
+          <div class="slider" data-slider aria-roledescription="карусель" aria-label="Отзывы клиентов">
+            <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Предыдущий отзыв">
+              <svg aria-hidden="true"><use href="#i-chevron-left"/></svg>
+            </button>
+            <div class="slider__viewport">
+              <ul class="slider__track">
+                <li class="slider__slide">
+                  <article class="review">
+                    <header class="review__head">
+                      <img class="review__avatar" src="img/reviews/anastasia.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+                      <div class="review__meta">
+                        <h3 class="review__name">Анастасия</h3>
+                        <span class="stars stars--sm" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+                      </div>
+                      <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
+                    </header>
+                    <p class="review__text">В этом салоне я чувствую себя особенной. Профессиональные мастера, уютная атмосфера и потрясающий результат. Спасибо!</p>
+                    <time class="review__date" datetime="2025-04-12">12.04.2025</time>
+                  </article>
+                </li>
+                <li class="slider__slide">
+                  <article class="review">
+                    <header class="review__head">
+                      <img class="review__avatar" src="img/reviews/viktoria.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+                      <div class="review__meta">
+                        <h3 class="review__name">Виктория</h3>
+                        <span class="stars stars--sm" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+                      </div>
+                      <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
+                    </header>
+                    <p class="review__text">Делала окрашивание и маникюр — всё на высшем уровне! Очень внимательный персонал, всё быстро и аккуратно.</p>
+                    <time class="review__date" datetime="2025-03-26">26.03.2025</time>
+                  </article>
+                </li>
+                <li class="slider__slide">
+                  <article class="review">
+                    <header class="review__head">
+                      <img class="review__avatar" src="img/reviews/elena.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+                      <div class="review__meta">
+                        <h3 class="review__name">Елена</h3>
+                        <span class="stars stars--sm" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+                      </div>
+                      <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
+                    </header>
+                    <p class="review__text">Массаж — это просто любовь! Расслабилась, как никогда. Обязательно приду ещё!</p>
+                    <time class="review__date" datetime="2025-03-15">15.03.2025</time>
+                  </article>
+                </li>
+                <li class="slider__slide">
+                  <article class="review">
+                    <header class="review__head">
+                      <img class="review__avatar" src="img/reviews/olga.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+                      <div class="review__meta">
+                        <h3 class="review__name">Ольга</h3>
+                        <span class="stars stars--sm" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+                      </div>
+                      <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
+                    </header>
+                    <p class="review__text">Хожу на чистку лица к Алине уже полгода — кожа сияет, а в салоне так спокойно и красиво. Моё любимое место!</p>
+                    <time class="review__date" datetime="2025-03-02">02.03.2025</time>
+                  </article>
+                </li>
+                <li class="slider__slide">
+                  <article class="review">
+                    <header class="review__head">
+                      <img class="review__avatar" src="img/reviews/marina.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+                      <div class="review__meta">
+                        <h3 class="review__name">Марина</h3>
+                        <span class="stars stars--sm" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+                      </div>
+                      <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
+                    </header>
+                    <p class="review__text">София сделала ламинирование ресниц и брови — взгляд стал открытым и выразительным. Рекомендую всем подругам!</p>
+                    <time class="review__date" datetime="2025-02-18">18.02.2025</time>
+                  </article>
+                </li>
+              </ul>
+            </div>
+            <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Следующий отзыв">
+              <svg aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ПРАЙС И КОНТАКТЫ ============ -->
+    <section class="info" id="prices" aria-label="Прайс-лист и контакты">
+      <div class="container">
+        <div class="info__panel" data-reveal>
+          <div class="price">
+            <div class="info__head">
+              <h2 class="section-title section-title--dark">Прайс-лист</h2>
+              <svg class="price__lotus" aria-hidden="true"><use href="#i-lotus"/></svg>
+            </div>
+            <p class="info__caption">Популярные услуги</p>
+            <ul class="price__list">
+              <li class="price__row"><span class="price__name">Чистка лица (комбинированная)</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">2&nbsp;500&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Окрашивание волос (классическое)</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">3&nbsp;500&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Стрижка женская</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">2&nbsp;000&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Маникюр (классический)</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">1&nbsp;500&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Педикюр (классический)</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">2&nbsp;000&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Коррекция бровей</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">1&nbsp;200&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Ламинирование ресниц</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">2&nbsp;500&nbsp;₽</span></li>
+              <li class="price__row"><span class="price__name">Массаж (1&nbsp;час)</span><span class="price__dots" aria-hidden="true"></span><span class="price__value">2&nbsp;500&nbsp;₽</span></li>
+            </ul>
+            <a class="btn btn--dark" href="files/price-list.pdf" download>
+              <span>Полный прайс-лист</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            </a>
+          </div>
+
+          <span class="info__divider" aria-hidden="true"></span>
+
+          <div class="address" id="contacts">
+            <div class="info__head">
+              <h2 class="section-title section-title--dark">Наш адрес</h2>
+              <svg class="address__deco" aria-hidden="true"><use href="#i-arrow-long"/></svg>
+            </div>
+            <p class="info__caption">Удобное расположение в центре города</p>
+            <ul class="contacts">
+              <li class="contacts__item">
+                <svg class="contacts__icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                <address>ул. Ленина, 15<br>(ТЦ «Атмосфера», 2 этаж)</address>
+              </li>
+              <li class="contacts__item">
+                <svg class="contacts__icon contacts__icon--gold" aria-hidden="true"><use href="#i-clock"/></svg>
+                <span>Ежедневно<br>с 09:00 до 21:00</span>
+              </li>
+            </ul>
+            <a class="btn btn--dark" href="https://yandex.ru/maps/?text=%D1%83%D0%BB.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2015" target="_blank" rel="noopener">
+              <span>Построить маршрут</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <ul class="contacts contacts--links">
+              <li class="contacts__item">
+                <svg class="contacts__icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+              </li>
+              <li class="contacts__item">
+                <svg class="contacts__icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+                <a href="https://instagram.com/beauty_salon" target="_blank" rel="noopener">@beauty_salon</a>
+              </li>
+              <li class="contacts__item">
+                <svg class="contacts__icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                <a href="https://wa.me/79991234567" target="_blank" rel="noopener">Написать в WhatsApp</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map-wrap">
+            <div class="map" data-map>
+              <div class="map__canvas" data-map-canvas>
+                <img src="img/map.webp" width="1200" height="896" loading="lazy" decoding="async" alt="Схема проезда: салон красоты на ул. Ленина, 15">
+              </div>
+              <span class="map__pin" aria-hidden="true"><svg><use href="#i-pin-fill"/></svg></span>
+              <div class="map__controls map__controls--top">
+                <button class="map__btn map__btn--compass" type="button" data-map-reset aria-label="Вернуть карту к салону"><svg aria-hidden="true"><use href="#i-compass"/></svg></button>
+              </div>
+              <div class="map__controls map__controls--zoom">
+                <button class="map__btn" type="button" data-zoom="in" aria-label="Приблизить карту"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+                <button class="map__btn" type="button" data-zoom="out" aria-label="Отдалить карту"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+              </div>
+            </div>
+            <svg class="map-wrap__doodle" aria-hidden="true"><use href="#i-flower-doodle"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ ПОДВАЛ ============ -->
+  <footer class="footer">
+    <div class="footer__panel">
+      <svg class="footer__swoosh" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g-swoosh" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#e9c69c" stop-opacity="0"/>
+            <stop offset=".25" stop-color="#e9c69c" stop-opacity=".55"/>
+            <stop offset=".5" stop-color="#e9c69c" stop-opacity=".08"/>
+            <stop offset=".75" stop-color="#e9c69c" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#e9c69c" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 170C260 120 420 190 600 150S900 110 1060 160 1300 150 1400 120" fill="none" stroke="url(#g-swoosh)" stroke-width="1.2"/>
+        <path d="M120 196C330 150 470 205 660 176S980 140 1140 182 1330 170 1420 150" fill="none" stroke="url(#g-swoosh)" stroke-width=".8"/>
+      </svg>
+
+      <div class="container footer__inner">
+        <a class="logo logo--footer" href="#top" aria-label="Салон красоты — наверх">
+          <svg class="logo__icon" aria-hidden="true"><use href="#i-lotus"/></svg>
+          <span class="logo__text">
+            <span class="logo__name">Салон красоты <svg class="logo__heart" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <span class="logo__tagline">Твоя красота — наша забота <span aria-hidden="true">♡</span></span>
+          </span>
+        </a>
+
+        <button class="btn btn--gold btn--lg btn--shine footer__cta" type="button" data-open="booking">
+          <span>Онлайн-запись</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+          <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+
+        <ul class="socials">
+          <li><a class="socials__link" href="https://instagram.com/beauty_salon" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a class="socials__link" href="https://vk.com/" target="_blank" rel="noopener" aria-label="ВКонтакте"><span class="socials__vk" aria-hidden="true">VK</span></a></li>
+          <li><a class="socials__link" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><svg aria-hidden="true"><use href="#i-send"/></svg></a></li>
+          <li class="socials__heart" aria-hidden="true"><svg><use href="#i-heart"/></svg></li>
+        </ul>
+      </div>
+
+      <p class="footer__note">Красота начинается с заботы о себе <span aria-hidden="true">♡</span></p>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ МОДАЛКА: ОНЛАЙН-ЗАПИСЬ ============ -->
+<div class="modal" id="booking" aria-hidden="true" inert>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+
+    <div class="booking" data-booking-form-wrap>
+      <p class="eyebrow eyebrow--gold">Онлайн-запись</p>
+      <h2 class="modal__title" id="booking-title">Запишитесь к нам</h2>
+      <p class="modal__text">Оставьте заявку — администратор перезвонит в течение 15 минут и подтвердит время визита.</p>
+
+      <form class="form" id="booking-form" novalidate>
+        <div class="form__grid">
+          <label class="field">
+            <span class="field__label">Ваше имя</span>
+            <input class="field__control" type="text" name="name" autocomplete="name" placeholder="Анна" required minlength="2">
+            <span class="field__error" aria-live="polite"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">Телефон</span>
+            <input class="field__control" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
+            <span class="field__error" aria-live="polite"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">Услуга</span>
+            <select class="field__control" name="service" required>
+              <option value="">Выберите услугу</option>
+              <option>Косметология</option>
+              <option>Парикмахерские услуги</option>
+              <option>Маникюр и педикюр</option>
+              <option>Массаж</option>
+              <option>Брови и ресницы</option>
+            </select>
+            <span class="field__error" aria-live="polite"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">Мастер</span>
+            <select class="field__control" name="master">
+              <option value="">Любой мастер</option>
+              <option value="Алина">Алина — косметолог</option>
+              <option value="Екатерина">Екатерина — парикмахер-стилист</option>
+              <option value="Мария">Мария — мастер маникюра</option>
+              <option value="София">София — брови и ресницы</option>
+            </select>
+            <span class="field__error" aria-live="polite"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">Дата</span>
+            <input class="field__control" type="date" name="date" required>
+            <span class="field__error" aria-live="polite"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">Время</span>
+            <select class="field__control" name="time" required>
+              <option value="">Выберите время</option>
+            </select>
+            <span class="field__error" aria-live="polite"></span>
+          </label>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" name="agree" required>
+          <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+          <span class="check__text">Даю согласие на обработку персональных данных</span>
+        </label>
+        <span class="field__error field__error--agree" aria-live="polite"></span>
+
+        <button class="btn btn--gold btn--lg btn--block" type="submit">
+          <span>Записаться</span>
+          <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="booking-success" data-booking-success hidden>
+      <span class="booking-success__icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+      <h2 class="modal__title">Спасибо, заявка принята!</h2>
+      <p class="modal__text" data-booking-summary>Мы свяжемся с вами в ближайшее время.</p>
+      <button class="btn btn--gold" type="button" data-close><span>Отлично</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ МОДАЛКА: ГАЛЕРЕЯ ============ -->
+<div class="modal modal--gallery" id="gallery" aria-hidden="true" inert>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__dialog modal__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть галерею"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="gallery__head">
+      <p class="eyebrow eyebrow--gold">Галерея</p>
+      <h2 class="modal__title" id="gallery-title">Атмосфера салона</h2>
+    </div>
+    <div class="gallery" data-gallery>
+      <figure class="gallery__stage">
+        <img data-gallery-image src="img/gallery/interior.webp" width="1200" height="805" alt="Интерьер салона">
+        <figcaption class="gallery__caption"><span data-gallery-caption>Интерьер салона</span><span class="gallery__count" data-gallery-count>1 / 8</span></figcaption>
+        <button class="gallery__nav gallery__nav--prev" type="button" data-gallery-prev aria-label="Предыдущее фото"><svg aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+        <button class="gallery__nav gallery__nav--next" type="button" data-gallery-next aria-label="Следующее фото"><svg aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+      </figure>
+      <ul class="gallery__thumbs">
+        <li><button class="gallery__thumb is-active" type="button" data-src="img/gallery/interior.webp" data-caption="Интерьер салона" aria-label="Интерьер салона"><img src="img/gallery/interior.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/gallery/manicure-zone.webp" data-caption="Зона маникюра" aria-label="Зона маникюра"><img src="img/gallery/manicure-zone.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/gallery/spa-care.webp" data-caption="Кабинет ухода" aria-label="Кабинет ухода"><img src="img/gallery/spa-care.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/services/cosmetology.webp" data-caption="Косметология" aria-label="Косметология"><img src="img/services/cosmetology.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/services/hair.webp" data-caption="Укладки и причёски" aria-label="Укладки и причёски"><img src="img/services/hair.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/services/nails.webp" data-caption="Маникюр" aria-label="Маникюр"><img src="img/services/nails.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/services/massage.webp" data-caption="Массаж" aria-label="Массаж"><img src="img/services/massage.webp" alt="" loading="lazy" decoding="async"></button></li>
+        <li><button class="gallery__thumb" type="button" data-src="img/services/brows.webp" data-caption="Брови и ресницы" aria-label="Брови и ресницы"><img src="img/services/brows.webp" alt="" loading="lazy" decoding="async"></button></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
